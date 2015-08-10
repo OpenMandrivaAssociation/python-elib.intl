@@ -13,7 +13,6 @@ Source0:	%{oname}-%{gdate}.tar.xz
 BuildArch:	noarch
 BuildRequires:	python2-setuptools
 BuildRequires:	python2-sphinx
-BuildRequires:	python-sphinx
 Provides:	%{oname} = %{version}-%{release}
 
 %description
@@ -29,7 +28,7 @@ elib.intl wraps Python's :func:`gettext` functionality.
 python2 setup.py build
 
 pushd doc/reference
-        make html
+        make html SPHINXBUILD=sphinx-build2
 	rm -rf build/html/.buildinfo
 popd
 
