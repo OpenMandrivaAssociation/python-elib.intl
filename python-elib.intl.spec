@@ -13,6 +13,7 @@ Source0:	%{oname}-%{gdate}.tar.xz
 BuildArch:	noarch
 BuildRequires:	python2-setuptools
 BuildRequires:	python2-sphinx
+BuildRequires:	python-sphinx
 Provides:	%{oname} = %{version}-%{release}
 
 %description
