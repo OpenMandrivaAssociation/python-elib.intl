@@ -11,8 +11,8 @@ Group:		Development/Python
 Url:		https://github.com/dieterv/elib.intl
 Source0:	%{oname}-%{gdate}.tar.xz
 BuildArch:	noarch
-BuildRequires:	python-setuptools
-BuildRequires:	python-sphinx
+BuildRequires:	python2-setuptools
+BuildRequires:	python2-sphinx
 Provides:	%{oname} = %{version}-%{release}
 
 %description
@@ -25,7 +25,7 @@ elib.intl wraps Python's :func:`gettext` functionality.
 %setup -qn %{oname}-%{gdate}
 
 %build
-python setup.py build
+python2 setup.py build
 
 pushd doc/reference
         make html
@@ -33,12 +33,12 @@ pushd doc/reference
 popd
 
 %install
-python setup.py install \
+python2 setup.py install \
 	--root %{buildroot}
 
 %files
 %doc doc/reference/build/html
-%{py_puresitedir}/%{oname}*
-%{py_puresitedir}/elib/
+%{py2_puresitedir}/%{oname}*
+%{py2_puresitedir}/elib/
 
 
